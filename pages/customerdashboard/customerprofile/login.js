@@ -38,14 +38,14 @@ export default function LoginForm() {
       try {
         const res = await login();
         console.log(res);
-        if (res && res.message === 'success') {
-          router.push('/profile'); // Adjust the route to match your actual route
+        if (res) {
+          router.push('/customerdashboard/customerprofile/profile'); // Adjust the route to match your actual route
         } else {
           setError('User not found');
         }
       } catch (error) {
         console.error(error);
-        setError('User not found');
+        setError('User cannot be found');
       }
     }
   };
